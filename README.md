@@ -8,6 +8,23 @@ The way I implemented the hashmap was by creating a list of linked lists, where 
 
 This implementation allows for amoritzed constant time lookup becuase I make sure that the number of key/value pairs does not exceed the number of buckets. Therefore, on average each bucket will contain one key/value pair, which allows for amortized constant time lookup. This also allows for amortized constant time insertion, updating, and deletion. Of course, ensuring that the number of buckets is at least as many as the total number of key/value pairs involves growing and shrinking the number of buckets when the number of key/value pairs reaches a specific threshold. Though the resizing operation is linear time with respect to the number of key/value pairs, because it only happens occasionally the total cost of the operation is amortized over time. Specifically, the number of buckets doubles when the number of key/value pairs exceeds the number of buckets, and is halved when the number of key/value pairs falls short of a quarter of the number of buckets.
 
+## Methods Supported
+
+The following instance methods are implemented for the hashmap:
+
+* []
+* []=
+* get(key, default = None)
+* delete(key)
+* has_key(key)
+* update(other_hash_map)
+* items()
+* keys()
+* values()
+* len(hash_map)
+* is_empty()
+* num_buckets()
+
 ## Setup
 
 This repo includes unittest files for the [hashmap](./hash_map_tests.py) as well as the [linked list](./linked_list_tests.py) that represents each bucket in the hashmap. I also include a [basic script](./main.py) that can be run to show the basic functionality of the hashmap.
